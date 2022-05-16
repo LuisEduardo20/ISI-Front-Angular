@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-modal',
@@ -6,12 +9,26 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit {
-  constructor() {}
+  router: any;
+
+  constructor(
+    router: Router,
+    private loginService: LoginService
+    ) {
+    this.router = router;
+  }
 
   // @Input() modalState: boolean | unknown;
   @Output() closeModalEvent = new EventEmitter();
 
-  ngOnInit(): void {}
+  loginForm!: FormGroup;
+
+  ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl(),
+    })
+  }
 
   closeModal() {
     // this.closeModalEvent.emit(!this.modalState);
@@ -19,6 +36,14 @@ export class ModalComponent implements OnInit {
   }
 
   login(){
-    console.log('entrou');
+
+    this.loginService.postData(this.loginForm.value).subscribe(response=>{
+      if(response.token){
+        this.router.navigate(['/cadastrar-produto']);
+      }
+    }, error =>{
+      alert (error.error.message);
+    })
+
   }
 }

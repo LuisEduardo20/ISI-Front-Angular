@@ -1,5 +1,5 @@
 <div id="drawer">
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="login()" [formGroup]="loginForm" #formDir="ngForm">
         <div class="drawer-wrapper">
             <div class="drawer-header">
                 <h3>Login</h3>
@@ -8,11 +8,11 @@
             <div class="input-container">
                 <div>
                     <span>Login</span>
-                    <input type="text" placeholder="Usuário" />
+                    <input formControlName="email" type="text" placeholder="Email" required/>
                 </div>
                 <div>
                     <span>Senha</span>
-                    <input type="text" placeholder="Senha" />
+                    <input formControlName="password" type="password" placeholder="Senha" required/>
                 </div>
                 <button type="submit">Entrar</button>
             </div>
