@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lobster', cursive;
+}
+
+*::-webkit-scrollbar {
+    background: #D6D6D6;
+    width: 7px;
+    height: 7px;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #202020;
+}

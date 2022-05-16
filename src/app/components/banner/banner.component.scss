@@ -1,0 +1,37 @@
+.banner {
+    height: 500px;
+    width: 100%;
+    background-image: url('../../../assets/card.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: all linear 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #D6D6D6;
+}
+
+.banner:hover {
+    filter: grayscale(0%);
+}
+
+.slogan {
+    transition: all linear 0.5s;
+    text-align: center;
+}
+
+.banner:hover .slogan {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slogan>h3 {
+    font-size: 3.6rem;
+}
+
+.slogan>span {
+    font-size: 1.5rem;
+}
