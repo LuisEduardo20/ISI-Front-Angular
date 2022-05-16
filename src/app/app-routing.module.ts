@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PageRegisterComponent } from './page-register/page-register.component';
+import { UserAuthenticatedGuard } from './services/guards/user-authenticated.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: "cadastrar-produto",
-    component: PageRegisterComponent
+    component: PageRegisterComponent,
+    canActivate: [UserAuthenticatedGuard]
   }
 ];
 
