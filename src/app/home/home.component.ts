@@ -12,7 +12,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openModal(event: any): void {
+  openModal(event: boolean): void {
+    this.modalState = event;
+    // this.isModalOpen.emit(!this.isModalOpen.emit);
+  }
+
+  closeModal(event: boolean): void{
     this.modalState = event;
     // this.isModalOpen.emit(!this.isModalOpen.emit);
   }
