@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
+import Service from '../services/services.service';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor(private service: Service) {}
 
-  private baseURL = `http://localhost:3333/login`
-
-  constructor(private http: HttpClient) { }
-
-  postData(data:User): Observable<any>{
-    return this.http.post(this.baseURL, data);
+  postData(data: User) {
+    return this.service.postData('login', data);
   }
 
   get logado(): boolean {
