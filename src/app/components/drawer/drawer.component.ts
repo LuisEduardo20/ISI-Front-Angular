@@ -5,10 +5,10 @@ import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss'],
+  templateUrl: './drawer.component.html',
+  styleUrls: ['./drawer.component.scss'],
 })
-export class ModalComponent implements OnInit {
+export class DrawerComponent implements OnInit {
   router: Router;
 
   constructor(
