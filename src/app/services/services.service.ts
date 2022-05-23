@@ -11,7 +11,19 @@ export default class ServicesService {
 
   constructor(private http: HttpClient) {}
 
-  postData(route: string, data: User): Observable<any> {
+  postData(route: string, data: any): Observable<any> {
     return this.http.post(`${this.baseURL}/${route}`, data);
+  }
+
+  getData(route: string): Observable<any> {
+    return this.http.get(`${this.baseURL}/${route}`);
+  }
+
+  putData(route: string, data: any): Observable<any> {
+    return this.http.put(`${this.baseURL}/${route}`, data);
+  }
+
+  deleteData(route: string): Observable<any> {
+    return this.http.delete(`${this.baseURL}/${route}`);
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Show } from '../models/show';
+import { ShowService } from '../services/show.service';
 
 @Component({
   selector: 'app-show',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowComponent implements OnInit {
 
-  constructor() { }
+  listShows: Show[] = [];
+  constructor(private showService: ShowService) { }
 
   ngOnInit(): void {
+    this.fetchShows();
+  }
+
+  private fetchShows(){
+    this.showService.listShows().subscribe(
+      (data: Show[]) => {
+        this.listShows = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 }
