@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aula-isi';
+
+  constructor() {}
+
+  modalState: boolean | unknown;
+
+  ngOnInit(): void {}
+
+  openModal(event: boolean): void {
+    this.modalState = event;
+    // this.isModalOpen.emit(!this.isModalOpen.emit);
+  }
+
+  closeModal(event: boolean): void{
+    this.modalState = event;
+    // this.isModalOpen.emit(!this.isModalOpen.emit);
+  }
 }

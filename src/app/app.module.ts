@@ -11,9 +11,11 @@ import { ModalComponent } from './components/modal/modal.component';
 import { PageRegisterComponent } from './page-register/page-register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShowComponent } from './show/show.component';
+import { CarteComponent } from './carte/carte.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HeaderPageComponent, BannerComponent, FooterComponent, ModalComponent, PageRegisterComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HeaderPageComponent, BannerComponent, FooterComponent, ModalComponent, PageRegisterComponent, HomeComponent, ShowComponent, CarteComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

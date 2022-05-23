@@ -13,7 +13,11 @@ export class UserService {
     return this.service.postData('login', data);
   }
 
-  get logado(): boolean {
+  get logged(): boolean {
     return localStorage.getItem('token') ? true : false;
+  }
+
+  logout(){
+    localStorage.removeItem('token');
   }
 }

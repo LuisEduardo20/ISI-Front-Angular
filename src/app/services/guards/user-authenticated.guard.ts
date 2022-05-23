@@ -13,7 +13,7 @@ export class UserAuthenticatedGuard implements CanActivate {
     private router: Router) {}
 
     canActivate(){
-      if (this.userService.logado) {
+      if (this.userService.logged) {
         return true;
       }
 

@@ -1,12 +1,14 @@
 <header id="header">
-  <img class="logo" src="assets/seucaneco.png" alt="card" />
-  <nav>
-    <ul class="nav-items">
-      <li>Home</li>
-      <li>Sobre</li>
-      <li>Contato</li>
-      <!-- <li>Entrar</li> -->
-      <li (click)="teste()">Entrar</li>
-    </ul>
-  </nav>
+    <img class="logo" src="assets/seucaneco.png" alt="card" />
+    <nav>
+        <ul class="nav-items">
+            <li (click)="viewHome()">Home</li>
+            <li (click)="viewShows()">Shows</li>
+            <li (click)="viewCarte()">Cardápio</li>
+            <!-- <li>Entrar</li> -->
+
+            <li *ngIf="!logged" (click)="openLoginModal()">Entrar</li>
+            <li *ngIf="logged" (click)="logout()">Sair</li>
+        </ul>
+    </nav>
 </header>

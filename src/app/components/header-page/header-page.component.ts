@@ -14,16 +14,36 @@ export class HeaderPageComponent implements OnInit {
     private userService: UserService) {this.router = router}
 
   @Output() modalState = new EventEmitter();
+  logged: boolean | unknown;
 
   ngOnInit(): void {
     this.modalState.emit(false);
+
+    if(this.userService.logged){
+      this.logged = true;
+    }else{
+      this.logged = false;
+    }
   }
 
-  teste(): void {
-    if(this.userService.logado){
-      this.router.navigate(['/cadastrar-produto']);
-    }else{
+  openLoginModal(): void {
       this.modalState.emit(true);
-    }
+  }
+
+  logout():void{
+    this.userService.logout();
+    window.location.reload()
+  }
+
+  viewShows():void{
+    this.router.navigate(['/shows']);
+  }
+
+  viewHome():void{
+    this.router.navigate(['/home']);
+  }
+
+  viewCarte():void{
+    this.router.navigate(['/cardapio']);
   }
 }

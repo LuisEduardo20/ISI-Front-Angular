@@ -40,7 +40,9 @@ export class ModalComponent implements OnInit {
     this.userService.postData(this.loginForm.value).subscribe(response=>{
       if(response.token){
         localStorage.setItem('token', btoa(JSON.stringify(response.token)));
-        this.router.navigate(['/cadastrar-produto']);
+        this.closeModal();
+        window.location.reload();
+        // this.router.navigate(['/cadastrar-produto']);
       }
     }, error =>{
       alert (error.error.message);

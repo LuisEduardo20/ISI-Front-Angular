@@ -1,5 +1,8 @@
 <div class="app">
-  <!-- <app-home></app-home> -->
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+    <!-- <app-home></app-home> -->
+    <!-- <app-header-page></app-header-page>
+     -->
+    <app-header-page (modalState)="openModal($event)"></app-header-page>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
 </div>
