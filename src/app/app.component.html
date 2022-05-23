@@ -1,5 +1,6 @@
 <div class="app">
     <app-header-page (modalState)="openModal($event)"></app-header-page>
     <router-outlet></router-outlet>
+    <app-drawer *ngIf="modalState" (closeModalEvent)="closeModal($event)"></app-drawer>
     <app-footer></app-footer>
 </div>
