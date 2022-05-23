@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Show } from '../models/show';
 import { ShowService } from '../services/show.service';
 
@@ -12,8 +12,14 @@ export class ShowComponent implements OnInit {
   listShows: Show[] = [];
   constructor(private showService: ShowService) { }
 
+  modalState: boolean | unknown;
+
   ngOnInit(): void {
     this.fetchShows();
+  }
+
+  openModal():void{
+    this.modalState = true;
   }
 
   private fetchShows(){

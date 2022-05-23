@@ -5,7 +5,12 @@
 </div>
 <main class="menu">
     <section class="shows">
-        <h2 class="title">Shows</h2>
+        <div class="title-section">
+            <h2 class="title">Shows</h2>
+            <button (click)="openModal()">
+              <h1>+</h1>
+            </button>
+        </div>
         <table class="table" id="tableProduct">
             <thead class="table-header">
                 <tr>
@@ -23,22 +28,5 @@
             </tbody>
         </table>
     </section>
-    <!-- <div class="modal">
-        <div class="modal-container">
-            <a class="exit" href="#">X</a>
-            <h2>Shows</h2>
-            <div class="modal-content">
-                <label for="bandName">Banda</label>
-                <input type="text" name="band" id="bandName" />
-                <label for="bandData">Data</label>
-                <input type="date" name="preco" id="bandDate" />
-                <label for="bandDate">Hora</label>
-                <input type="time" name="provider" id="bandTime" />
-            </div>
-            <div class="modal-buttons">
-                <button class="secondary-button">Cancelar</button>
-                <button class="primary-button">Salvar</button>
-            </div>
-        </div>
-    </div> -->
+    <app-modal *ngIf="modalState"></app-modal>
 </main>
