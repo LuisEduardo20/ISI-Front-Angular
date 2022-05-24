@@ -23,7 +23,7 @@ export default class ServicesService {
     return this.http.put(`${this.baseURL}/${route}`, data);
   }
 
-  deleteData(route: string): Observable<any> {
-    return this.http.delete(`${this.baseURL}/${route}`);
+  deleteData(route: string, id: number) {
+    return this.http.delete(`${this.baseURL}/${route}/` + id).subscribe(() => window.location.reload());
   }
 }

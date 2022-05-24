@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Show } from '../models/show';
 import { ShowService } from '../services/show.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-show',
@@ -10,12 +11,15 @@ import { ShowService } from '../services/show.service';
 export class ShowComponent implements OnInit {
 
   listShows: Show[] = [];
-  constructor(private showService: ShowService) { }
+  constructor(private showService: ShowService, private userService: UserService) { }
 
   modalState: boolean | unknown;
+  logged: boolean | unknown;
+
 
   ngOnInit(): void {
     this.fetchShows();
+    this.logged = this.userService.logged;
   }
 
   openModal():void{
@@ -31,6 +35,10 @@ export class ShowComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  destroy(data: Show):void{
+    this.showService.deleteShow(data.id);
   }
 
 }

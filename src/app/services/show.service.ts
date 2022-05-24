@@ -17,4 +17,8 @@ export class ShowService {
     return this.service.getData('shows');
   }
 
+  deleteShow(id: number) {
+    return this.service.deleteData('shows', id);
+  }
+
 }
