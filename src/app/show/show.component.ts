@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Show } from '../models/show';
 import { ShowService } from '../services/show.service';
 import { UserService } from '../services/user.service';
@@ -11,6 +11,8 @@ import { UserService } from '../services/user.service';
 export class ShowComponent implements OnInit {
 
   listShows: Show[] = [];
+  show: Show | undefined;
+
   constructor(private showService: ShowService, private userService: UserService) { }
 
   modalState: boolean | unknown;
@@ -39,6 +41,11 @@ export class ShowComponent implements OnInit {
 
   destroy(data: Show):void{
     this.showService.deleteShow(data.id);
+  }
+
+  edit(data:Show):void{
+    this.modalState = true;
+    this.show = data;
   }
 
 }

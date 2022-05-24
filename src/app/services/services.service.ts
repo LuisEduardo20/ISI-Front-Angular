@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +18,8 @@ export default class ServicesService {
     return this.http.get(`${this.baseURL}/${route}`);
   }
 
-  putData(route: string, data: any): Observable<any> {
-    return this.http.put(`${this.baseURL}/${route}`, data);
+  putData(route: string, data: any, id:number) {
+    return this.http.put(`${this.baseURL}/${route}/` + id, data).subscribe(() => window.location.reload());
   }
 
   deleteData(route: string, id: number) {

@@ -21,4 +21,8 @@ export class ShowService {
     return this.service.deleteData('shows', id);
   }
 
+  updateShow(data: Show, newData: Show) {
+    return this.service.putData('shows', newData, data.id);
+  }
+
 }

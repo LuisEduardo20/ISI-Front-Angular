@@ -17,7 +17,7 @@
                     <th>Show</th>
                     <th>Data</th>
                     <th>Hora</th>
-                    <th>Ações</th>
+                    <th *ngIf="logged">Ações</th>
                 </tr>
             </thead>
             <tbody class="table-body">
@@ -27,11 +27,11 @@
                     <th>{{show.hora}}</th>
                     <th *ngIf="logged">
                         <button (click)="destroy(show)">Excluir</button>
-                        <button>Editar</button>
+                        <button (click)="edit(show)">Editar</button>
                     </th>
                 </tr>
             </tbody>
         </table>
     </section>
-    <app-modal *ngIf="modalState"></app-modal>
+    <app-modal [show]="show" *ngIf="modalState"></app-modal>
 </main>
