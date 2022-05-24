@@ -51,7 +51,9 @@ export class MenuComponent implements OnInit {
   }
 
   destroy(data: Product):void{
-    this.productService.deleteProduct(data.id);
+    if(confirm(`Tem certeza que deseja excluir o produto ${data.nome}?`)){
+      this.productService.deleteProduct(data.id);
+    }
   }
 
   edit(data:Product):void{

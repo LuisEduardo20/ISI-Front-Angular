@@ -40,7 +40,9 @@ export class ShowComponent implements OnInit {
   }
 
   destroy(data: Show):void{
-    this.showService.deleteShow(data.id);
+    if(confirm(`Tem certeza que deseja excluir o show ${data.nome_atracao}?`)){
+      this.showService.deleteShow(data.id);
+    }
   }
 
   edit(data:Show):void{

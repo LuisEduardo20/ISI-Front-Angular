@@ -7,7 +7,7 @@
     <section class="products">
         <div class="title-section">
             <h2 class="title">Bebidas</h2>
-            <button *ngIf="logged" (click)="openModal()">
+            <button class="button-styled" *ngIf="logged" (click)="openModal()">
           <h1>+</h1>
         </button>
         </div>
@@ -24,15 +24,20 @@
                     <th>{{drink.nome}}</th>
                     <th>{{drink.preco}}</th>
                     <th *ngIf="logged">
-                        <button (click)="destroy(drink)">Excluir</button>
-                        <button (click)="edit(drink)">Editar</button>
+                        <button class="button-styled" (click)="destroy(drink)">Excluir</button>
+                        <button class="button-styled" (click)="edit(drink)">Editar</button>
                     </th>
                 </tr>
             </tbody>
         </table>
     </section>
     <section class="products">
-        <h2 class="title">Petiscos</h2>
+        <div class="title-section">
+            <h2 class="title">Petiscos</h2>
+            <button class="button-styled" *ngIf="logged" (click)="openModal()">
+      <h1>+</h1>
+    </button>
+        </div>
         <table class="table" id="tableProduct">
             <thead class="table-header">
                 <tr>
@@ -46,8 +51,8 @@
                     <th>{{snack.nome}}</th>
                     <th>{{snack.preco}}</th>
                     <th *ngIf="logged">
-                        <button (click)="destroy(snack)">Excluir</button>
-                        <button (click)="edit(snack)">Editar</button>
+                        <button class="button-styled" (click)="destroy(snack)">Excluir</button>
+                        <button class="button-styled" (click)="edit(snack)">Editar</button>
                     </th>
                 </tr>
             </tbody>

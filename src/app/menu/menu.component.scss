@@ -452,3 +452,14 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.button-styled {
+    padding: 5px 10px;
+    background-color: #333533;
+    border: 1px solid #202020;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #D6D6D6;
+    transition: all linear 0.5s;
+    margin-right: 5px;
+}

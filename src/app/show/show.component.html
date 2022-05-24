@@ -7,7 +7,7 @@
     <section class="shows">
         <div class="title-section">
             <h2 class="title">Shows</h2>
-            <button *ngIf="logged" (click)="openModal()">
+            <button class="button-styled" *ngIf="logged" (click)="openModal()">
               <h1>+</h1>
             </button>
         </div>
@@ -26,8 +26,8 @@
                     <th>{{show.data}}</th>
                     <th>{{show.hora}}</th>
                     <th *ngIf="logged">
-                        <button (click)="destroy(show)">Excluir</button>
-                        <button (click)="edit(show)">Editar</button>
+                        <button class="button-styled" (click)="destroy(show)">Excluir</button>
+                        <button class="button-styled" (click)="edit(show)">Editar</button>
                     </th>
                 </tr>
             </tbody>
