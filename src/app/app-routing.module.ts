@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CarteComponent } from './carte/carte.component';
+import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ShowComponent } from './show/show.component';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: "cardapio",
-    component: CarteComponent
+    component: MenuComponent
   }
 ];
 

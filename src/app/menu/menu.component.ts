@@ -4,11 +4,11 @@ import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-carte',
-  templateUrl: './carte.component.html',
-  styleUrls: ['./carte.component.scss']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
 })
-export class CarteComponent implements OnInit {
+export class MenuComponent implements OnInit {
 
   listSnacksProducts: Product[] = [];
   listDrinksProducts: Product[] = [];

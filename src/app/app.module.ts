@@ -10,12 +10,12 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowComponent } from './show/show.component';
-import { CarteComponent } from './carte/carte.component';
+import { MenuComponent } from './menu/menu.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { ModalProductComponent } from './modal-product/modal-product.component';
+import { ModalProductComponent } from './components/modal-product/modal-product.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderPageComponent, BannerComponent, FooterComponent, DrawerComponent, HomeComponent, ShowComponent, CarteComponent, ModalComponent, ModalProductComponent],
+  declarations: [AppComponent, HeaderPageComponent, BannerComponent, FooterComponent, DrawerComponent, HomeComponent, ShowComponent, MenuComponent, ModalComponent, ModalProductComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
