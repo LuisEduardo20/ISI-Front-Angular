@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CarteComponent } from './carte/carte.component';
 import { HomeComponent } from './home/home.component';
-import { PageRegisterComponent } from './page-register/page-register.component';
-import { UserAuthenticatedGuard } from './services/guards/user-authenticated.guard';
 import { ShowComponent } from './show/show.component';
 
 const routes: Routes = [
@@ -16,11 +14,6 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
-  },
-  {
-    path: "cadastrar-produto",
-    component: PageRegisterComponent,
-    canActivate: [UserAuthenticatedGuard]
   },
   {
     path: "shows",

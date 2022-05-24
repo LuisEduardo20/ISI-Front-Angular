@@ -25,4 +25,12 @@ export class ProductService {
     return this.service.getData('drinks');
   }
 
+  updateProduct(data: Product, newData: Product) {
+    return this.service.putData('products', newData, data.id);
+  }
+
+  deleteProduct(id: number) {
+    return this.service.deleteData('products', id);
+  }
+
 }

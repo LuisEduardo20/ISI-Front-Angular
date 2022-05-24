@@ -5,18 +5,28 @@
 </div>
 <main class="menu">
     <section class="products">
-        <h2 class="title">Bebidas</h2>
+        <div class="title-section">
+            <h2 class="title">Bebidas</h2>
+            <button *ngIf="logged" (click)="openModal()">
+          <h1>+</h1>
+        </button>
+        </div>
         <table class="table" id="tableProduct">
             <thead class="table-header">
                 <tr>
                     <th>Bebida</th>
                     <th>Preço</th>
+                    <th *ngIf="logged">Ações</th>
                 </tr>
             </thead>
             <tbody class="table-body">
-                <tr *ngFor="let snack of listSnacksProducts" class="table-row">
-                    <th>{{snack.nome}}</th>
-                    <th>{{snack.preco}}</th>
+                <tr *ngFor="let drink of listDrinksProducts" class="table-row">
+                    <th>{{drink.nome}}</th>
+                    <th>{{drink.preco}}</th>
+                    <th *ngIf="logged">
+                        <button (click)="destroy(drink)">Excluir</button>
+                        <button (click)="edit(drink)">Editar</button>
+                    </th>
                 </tr>
             </tbody>
         </table>
@@ -28,14 +38,20 @@
                 <tr>
                     <th>Petisco</th>
                     <th>Preço</th>
+                    <th *ngIf="logged">Ações</th>
                 </tr>
             </thead>
             <tbody class="table-body">
-                <tr *ngFor="let drink of listDrinksProducts" class="table-row">
-                    <th>{{drink.nome}}</th>
-                    <th>{{drink.preco}}</th>
+                <tr *ngFor="let snack of listSnacksProducts" class="table-row">
+                    <th>{{snack.nome}}</th>
+                    <th>{{snack.preco}}</th>
+                    <th *ngIf="logged">
+                        <button (click)="destroy(snack)">Excluir</button>
+                        <button (click)="edit(snack)">Editar</button>
+                    </th>
                 </tr>
             </tbody>
         </table>
     </section>
+    <app-modal-product [product]="product" *ngIf="modalState"></app-modal-product>
 </main>

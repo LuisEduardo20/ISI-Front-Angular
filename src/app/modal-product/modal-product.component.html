@@ -1,0 +1,35 @@
+<div class="modal">
+    <form (ngSubmit)="register()" [formGroup]="productForm" #formDir="ngForm">
+        <div class="modal-container">
+            <a class="exit" href="/cardapio">X</a>
+            <h2>Produto</h2>
+            <div class="modal-content">
+                <label for="productId">Código</label>
+                <input formControlName="codigo" type="text" name="id" id="productId" />
+                <label for="productName">Nome</label>
+                <input formControlName="nome" type="text" name="nome" id="productName" />
+                <label for="productValue">Preço</label>
+                <input formControlName="preco" type="text" name="preco" id="productValue" />
+                <label for="productProvider">Fornecedor</label>
+                <input formControlName="nome_fornecedor" type="text" name="provider" id="productProvider" />
+                <label for="productProviderEmail">Email do fornecedor</label>
+                <input formControlName="email_fornecedor" type="email" name="email" id="productProviderEmail" />
+                <p class="sub-title">Tipo</p>
+                <div class="modal-radio">
+                    <div>
+                        <input formControlName="tipo" type="radio" name="tipo" value="bebida" />
+                        <label for="Bebida">Bebida</label>
+                    </div>
+                    <div>
+                        <input formControlName="tipo" type="radio" name="tipo" value="petisco" />
+                        <label for="Petisco">Petisco</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="secondary-button">Cancelar</button>
+                <button type="submit" class="primary-button">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

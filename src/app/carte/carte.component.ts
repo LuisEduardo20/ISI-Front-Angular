@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-carte',
@@ -11,15 +12,19 @@ export class CarteComponent implements OnInit {
 
   listSnacksProducts: Product[] = [];
   listDrinksProducts: Product[] = [];
+  modalState: boolean | unknown;
+  logged: boolean | unknown;
+  product: Product | undefined;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.fetchSnacksProducts();
     this.fetchDrinksProducts();
+    this.logged = this.userService.logged;
   }
 
-  private fetchSnacksProducts(){
+  private fetchSnacksProducts() {
     this.productService.listSnacksProducts().subscribe(
       (data: Product[]) => {
         this.listSnacksProducts = data;
@@ -30,7 +35,7 @@ export class CarteComponent implements OnInit {
     );
   }
 
-  private fetchDrinksProducts(){
+  private fetchDrinksProducts() {
     this.productService.listDrinksProducts().subscribe(
       (data: Product[]) => {
         this.listDrinksProducts = data;
@@ -39,6 +44,19 @@ export class CarteComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openModal(): void {
+    this.modalState = true;
+  }
+
+  destroy(data: Product):void{
+    this.productService.deleteProduct(data.id);
+  }
+
+  edit(data:Product):void{
+    this.modalState = true;
+    this.product = data;
   }
 
 }
